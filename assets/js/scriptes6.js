@@ -154,7 +154,11 @@ document.querySelector("#addBookForm").addEventListener("submit", function(e){
             ui.clearFields(title, author, isbn);
 
             //close modal
-            new bootstrap.Modal(document.getElementById("addBookModal")).hide();
+            setTimeout(() => {
+                var myModal = document.querySelector("#addBookModal");
+                var modal   = bootstrap.Modal.getInstance(myModal);
+                modal.hide();
+            }, 1500);
         }                      
 
 });
